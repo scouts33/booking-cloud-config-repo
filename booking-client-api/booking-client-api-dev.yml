@@ -1,0 +1,22 @@
+spring:
+  data:
+    mongodb:
+      uri:
+  task:
+    execution:
+      pool:
+        core-size: 10
+        max-size: 10
+      thread-name-prefix: member-auth-async-pool
+feign:
+  hystrix:
+    enabled: true
+    client:
+      config:
+        default:
+          connectTimeout: 2_000
+          readTimeout: 2_000
+logging.level:
+  root: INFO
+  org.springframework: INFO
+  com.sungmin: DEBUG
